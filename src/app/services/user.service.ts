@@ -14,4 +14,7 @@ private apiServerUrl=environment.apiBaseUrl
   public addUser(user:User):Observable<User>{
     return this.http.post<User>(`${this.apiServerUrl}/user/createuser`, user);
   }
+  public updateUser(user:User):Observable<User>{
+    return this.http.put<User>(`${this.apiServerUrl}/user/updateuser`, user);
+  }
 }

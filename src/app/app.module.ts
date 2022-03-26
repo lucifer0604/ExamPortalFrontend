@@ -12,12 +12,21 @@ import { FooterComponent } from './component/footer/footer.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { LoginComponent } from './pages/login/login.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { HomeComponent } from './pages/home/home.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
+import { AuthInterceptorService } from './services/auth-interceptor.service';
+import { AdminDashboardComponent } from './component/admin/admin-dashboard/admin-dashboard.component';
+import { UserDashboardComponent } from './component/user/user-dashboard/user-dashboard.component';
+import {MatSelectModule} from '@angular/material/select';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { SidebarComponent } from './component/admin/sidebar/sidebar.component';
+import {MatListModule} from '@angular/material/list';
+import { WelcomeComponent } from './component/admin/welcome/welcome.component';
 
 
 @NgModule({
@@ -27,7 +36,12 @@ import {MatIconModule} from '@angular/material/icon';
     FooterComponent,
     SignupComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    AdminDashboardComponent,
+    UserDashboardComponent,
+    ProfileComponent,
+    SidebarComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
@@ -41,10 +55,19 @@ import {MatIconModule} from '@angular/material/icon';
     MatSnackBarModule,
     MatCardModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    MatSelectModule,
+    NgbModule,
+    MatListModule
     
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true
+     }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

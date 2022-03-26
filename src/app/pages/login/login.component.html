@@ -1,4 +1,4 @@
-<app-navbar></app-navbar>
+
 <div class="bootstrap-wrapper">
     <div class="container">
         <div class="row signupUI">
@@ -20,6 +20,9 @@
                         </mat-form-field>
                         <div class="container text-center">
                             <button class="mx-2" type="submit" mat-raised-button color="primary">Login</button>
+                            <a  [routerLink]="'/signup'" mat-icon-button class="example-icon mx-4">
+                                Not an user? Click here
+                              </a>
                         </div>
                     </form>
                 </mat-card>
@@ -27,4 +30,6 @@
 
         </div>
     </div>
+   
+
 </div>

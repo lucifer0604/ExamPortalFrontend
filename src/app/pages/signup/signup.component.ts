@@ -23,7 +23,7 @@ public user:User={id:0,username:"",firstname:"",lastname:"",phone:"",email:"",pa
     this.userService.addUser(this.user).subscribe(
       (response: User)=>{
         console.log(response)
-        alert("User register succefully");
+        alert("User register successfully");
       },
       (error:HttpErrorResponse)=>{
         console.log(error)

@@ -4,10 +4,9 @@
     </a>
     <span>Exam Portal</span>
     <span class="example-spacer"></span>
-    <a [routerLink]="'/login'" mat-icon-button class="example-icon favorite-icon">
-      login
-    </a>
-    <a  [routerLink]="'/signup'" mat-icon-button class="example-icon mx-4">
-      register
-    </a>
+
+    <div *ngIf="loginService.isLoggedIn()" class=" me-3">
+        <button (click)="logout()" class="btn"><mat-icon>logout</mat-icon>Logout</button>
+    </div>
+
   </mat-toolbar>

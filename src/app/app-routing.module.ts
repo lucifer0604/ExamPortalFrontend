@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddCategoryComponent } from './component/admin/add-category/add-category.component';
 import { AdminDashboardComponent } from './component/admin/admin-dashboard/admin-dashboard.component';
+import { ViewCategoriesComponent } from './component/admin/view-categories/view-categories.component';
 import { WelcomeComponent } from './component/admin/welcome/welcome.component';
 import { UserDashboardComponent } from './component/user/user-dashboard/user-dashboard.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -26,7 +28,16 @@ const routes: Routes = [
     {
       path:"",
       component:WelcomeComponent
+    },
+    {
+      path:"categories",
+      component:ViewCategoriesComponent
+    },
+    {
+      path:"addcategory",
+      component:AddCategoryComponent
     }
+
   ]
 },
   { path: 'user-dashboard',component: UserDashboardComponent,pathMatch: 'full',canActivate:[NormalGuard]}

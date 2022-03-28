@@ -29,7 +29,9 @@ import {MatListModule} from '@angular/material/list';
 import { WelcomeComponent } from './component/admin/welcome/welcome.component';
 import { ViewCategoriesComponent } from './component/admin/view-categories/view-categories.component';
 import { AddCategoryComponent } from './component/admin/add-category/add-category.component';
-
+import { ShowQuizComponent } from './component/admin/show-quiz/show-quiz.component';
+import { AddQuizComponent } from './component/admin/add-quiz/add-quiz.component';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import { AddCategoryComponent } from './component/admin/add-category/add-categor
     SidebarComponent,
     WelcomeComponent,
     ViewCategoriesComponent,
-    AddCategoryComponent
+    AddCategoryComponent,
+    ShowQuizComponent,
+    AddQuizComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +66,8 @@ import { AddCategoryComponent } from './component/admin/add-category/add-categor
     MatIconModule,
     MatSelectModule,
     NgbModule,
-    MatListModule
+    MatListModule,
+    MatSlideToggleModule
     
   ],
   providers: [

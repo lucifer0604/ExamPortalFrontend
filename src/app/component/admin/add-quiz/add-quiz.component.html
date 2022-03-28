@@ -1,0 +1,47 @@
+<mat-card>
+    <h1>Add New Quiz</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <form (ngSubmit)="formSubmit()">
+                    <mat-form-field class="full-width"  appearance="outline">
+                        <mat-label>Title</mat-label>
+                        <input name="title" [(ngModel)]="categoryData.title" name="title"  matInput>
+                    </mat-form-field>
+                    <mat-form-field class="full-width"  appearance="outline">
+                        <mat-label>Description</mat-label>
+                        <textarea name="description" [(ngModel)]="categoryData.description" name="title"  matInput></textarea>
+                    </mat-form-field>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <mat-form-field class="full-width"  appearance="outline">
+                                <mat-label>Max Marks</mat-label>
+                                <input name="maxMarks" [(ngModel)]="categoryData.maxMarks"  name="title"  matInput>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-6">
+                            <mat-form-field class="full-width"  appearance="outline">
+                                <mat-label>Number of Questions</mat-label>
+                                <input name="numberOfQuestions" [(ngModel)]="categoryData.numberOfQuestions"  name="title"  matInput>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <mat-slide-toggle  name="active" [(ngModel)]="categoryData.active" class="example-margin mb10" >Publish Status</mat-slide-toggle>
+                    <br>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Categories</mat-label>
+                        <mat-select name="category" [(ngModel)]="categoryData.category.cid">
+                          <mat-option *ngFor="let q of categories" [value]="q.cid">
+                            {{q.title}}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                      <div class="container text-center">
+                        <button class="mx-2" type="submit" mat-raised-button color="primary">Save</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</mat-card>

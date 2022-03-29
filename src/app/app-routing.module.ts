@@ -4,7 +4,9 @@ import { AddCategoryComponent } from './component/admin/add-category/add-categor
 import { AddQuizComponent } from './component/admin/add-quiz/add-quiz.component';
 import { AdminDashboardComponent } from './component/admin/admin-dashboard/admin-dashboard.component';
 import { ShowQuizComponent } from './component/admin/show-quiz/show-quiz.component';
+import { UpdateQuizComponent } from './component/admin/update-quiz/update-quiz.component';
 import { ViewCategoriesComponent } from './component/admin/view-categories/view-categories.component';
+import { ViewQuestionsComponent } from './component/admin/view-questions/view-questions.component';
 import { WelcomeComponent } from './component/admin/welcome/welcome.component';
 import { UserDashboardComponent } from './component/user/user-dashboard/user-dashboard.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -15,42 +17,50 @@ import { AdminGuard } from './services/admin.guard';
 import { NormalGuard } from './services/normal.guard';
 
 const routes: Routes = [
-  { path: 'signup',component: SignupComponent,pathMatch: 'full'},
-  { path: 'login',component: LoginComponent,pathMatch: 'full'},
-  { path: '',component: HomeComponent,pathMatch: 'full'},
-  { 
+  { path: 'signup', component: SignupComponent, pathMatch: 'full' },
+  { path: 'login', component: LoginComponent, pathMatch: 'full' },
+  { path: '', component: HomeComponent, pathMatch: 'full' },
+  {
     path: 'admin-dashboard',
-  component: AdminDashboardComponent,
-  canActivate:[AdminGuard],
-  children:[
-    {
-      path:"profile",
-      component:ProfileComponent
-    },
-    {
-      path:"",
-      component:WelcomeComponent
-    },
-    {
-      path:"categories",
-      component:ViewCategoriesComponent
-    },
-    {
-      path:"addcategory",
-      component:AddCategoryComponent
-    },
-    {
-      path:"quizzes",
-      component:ShowQuizComponent
-    },
-    {
-      path:"addquiz",
-      component:AddQuizComponent
-    }
+    component: AdminDashboardComponent,
+    canActivate: [AdminGuard],
+    children: [
+      {
+        path: "profile",
+        component: ProfileComponent
+      },
+      {
+        path: "",
+        component: WelcomeComponent
+      },
+      {
+        path: "categories",
+        component: ViewCategoriesComponent
+      },
+      {
+        path: "addcategory",
+        component: AddCategoryComponent
+      },
+      {
+        path: "quizzes",
+        component: ShowQuizComponent
+      },
+      {
+        path: "addquiz",
+        component: AddQuizComponent
+      },
+      {
+        path: "updatequiz/:qid",
+        component: UpdateQuizComponent
+      },
+      {
+        path: "viewquestions/:qid/:title",
+        component: ViewQuestionsComponent
+      }
 
-  ]
-},
-  { path: 'user-dashboard',component: UserDashboardComponent,pathMatch: 'full',canActivate:[NormalGuard]}
+    ]
+  },
+  { path: 'user-dashboard', component: UserDashboardComponent, pathMatch: 'full', canActivate: [NormalGuard] }
 ];
 
 @NgModule({

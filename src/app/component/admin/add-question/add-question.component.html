@@ -1,0 +1,56 @@
+<mat-card>
+    <h1>Add New Question in {{quizTitle}}</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <form (ngSubmit)="formSubmit()">
+                    <ckeditor [editor]="Editor" name="title" [(ngModel)]="question.content"></ckeditor>
+                    <!-- <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Content</mat-label>
+                        <textarea name="title" [(ngModel)]="question.content" matInput></textarea>
+                    </mat-form-field> -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>Option 1</mat-label>
+                                <input name="option1" [(ngModel)]="question.option1" matInput>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-6">
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>Option 2</mat-label>
+                                <input name="option2" [(ngModel)]="question.option2" matInput>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>Option 3</mat-label>
+                                <input name="option3" [(ngModel)]="question.option3" matInput>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-6">
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>Option 4</mat-label>
+                                <input name="option4" [(ngModel)]="question.option4" matInput>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Answer</mat-label>
+                        <input name="answer" [(ngModel)]="question.answer" matInput>
+                    </mat-form-field>
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Image</mat-label>
+                        <input name="image" [(ngModel)]="question.image" matInput>
+                    </mat-form-field>
+                    <div class="container text-center">
+                        <button class="mx-2" type="submit" mat-raised-button color="primary">Save</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</mat-card>

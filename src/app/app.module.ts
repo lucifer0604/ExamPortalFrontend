@@ -35,6 +35,13 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { UpdateQuizComponent } from './component/admin/update-quiz/update-quiz.component';
 import { ViewQuestionsComponent } from './component/admin/view-questions/view-questions.component';
 import { NgxUiLoaderModule, NgxUiLoaderHttpModule } from "ngx-ui-loader";
+import { AddQuestionComponent } from './component/admin/add-question/add-question.component';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { UserSidebarComponent } from './component/user/user-sidebar/user-sidebar.component';
+import { LoadQuizComponent } from './component/user/load-quiz/load-quiz.component';
+import { InstructionComponent } from './component/user/instruction/instruction.component';
+import { StartComponent } from './component/user/start/start.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -54,7 +61,12 @@ import { NgxUiLoaderModule, NgxUiLoaderHttpModule } from "ngx-ui-loader";
     ShowQuizComponent,
     AddQuizComponent,
     UpdateQuizComponent,
-    ViewQuestionsComponent
+    ViewQuestionsComponent,
+    AddQuestionComponent,
+    UserSidebarComponent,
+    LoadQuizComponent,
+    InstructionComponent,
+    StartComponent
   ],
   imports: [
     BrowserModule,
@@ -72,7 +84,9 @@ import { NgxUiLoaderModule, NgxUiLoaderHttpModule } from "ngx-ui-loader";
     MatSelectModule,
     NgbModule,
     MatListModule,
+    MatProgressSpinnerModule,
     MatSlideToggleModule,
+    CKEditorModule,
     NgxUiLoaderModule.forRoot(
       { pbThickness: 6 }
     ),

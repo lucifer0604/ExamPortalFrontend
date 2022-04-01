@@ -2,6 +2,11 @@
 
 
 <div class="bootstrap-wrapper">
+    <div class="container text-center mt10 mb10">
+        <button [routerLink]="'/admin-dashboard/addquestions/'+ qId + '/'+ title" mat-raised-button color="accent">Add
+            New
+            Question</button>
+    </div>
     <mat-card class="mb bt" *ngFor="let q of questions; let i=index">
         <mat-card-content>
             <p>
@@ -31,12 +36,10 @@
             </div>
         </mat-card-content>
         <mat-card-actions class="mt10 text-center">
-            <button [routerLink]="" mat-flat-button color="accent">Update</button>
-            <button class="ml10" mat-flat-button color="warn">Delete</button>
+            <!-- <button [routerLink]="" mat-flat-button color="accent">Update</button> -->
+            <button class="ml10" (click)="deleteQuestion(q.quesId)" mat-flat-button color="warn">Delete</button>
         </mat-card-actions>
     </mat-card>
 
-    <div class="container text-center mt10">
-        <button mat-raised-button color="accent">Add New Question</button>
-    </div>
+
 </div>
